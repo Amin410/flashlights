@@ -10,7 +10,7 @@ const TrafficLights = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCycle((prevCycle) => (prevCycle + 1) % 4);
-    }, 5000); // Change every 5 seconds for demonstration
+    }, 1000); // Change every 5 seconds for demonstration
 
     return () => clearInterval(interval);
   }, []);
@@ -18,8 +18,8 @@ const TrafficLights = () => {
   const lightStates = {
     top: cycle === 0 ? "green" : "red",
     right: cycle === 1 ? "green" : "red",
-    bottom: cycle === 2 ? "green" : "red",
-    left: cycle === 3 ? "green" : "red",
+    bottom: cycle === 2 ? "red" : "green",
+    left: cycle === 3 ? "red" : "green",
   };
   return (
     <main className="relative w-96 h-112">
